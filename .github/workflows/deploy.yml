@@ -10,6 +10,9 @@ jobs:
   build:
     name: Build Docusaurus
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: PhysicalAI_HumanoidRobotics
     steps:
       - uses: actions/checkout@v4
         with:
@@ -19,20 +22,18 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: PhysicalAI_HumanoidRobotics/package-lock.json
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
-        working-directory: PhysicalAI_HumanoidRobotics
         run: npm ci
 
       - name: Build website
-        working-directory: PhysicalAI_HumanoidRobotics
         run: npm run build
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: PhysicalAI_HumanoidRobotics/build
+          path: build
 
   deploy:
     name: Deploy to GitHub Pages
