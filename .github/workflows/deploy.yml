@@ -10,9 +10,6 @@ jobs:
   build:
     name: Build Docusaurus
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: PhysicalAI_HumanoidRobotics
     steps:
       - uses: actions/checkout@v4
         with:
