@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /s /b)",
+      "Bash(findstr -i \"mcp\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

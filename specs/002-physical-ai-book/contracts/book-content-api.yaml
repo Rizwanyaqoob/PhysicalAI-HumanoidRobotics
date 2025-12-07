@@ -1,0 +1,207 @@
+# API Contract: Book Content Access for Physical AI & Humanoid Robotics Book
+
+openapi: 3.0.0
+info:
+  title: Physical AI & Humanoid Robotics Book Content API
+  version: 1.0.0
+  description: API for accessing book content, code examples, and educational resources
+
+paths:
+  /chapters:
+    get:
+      summary: Get list of all book chapters
+      responses:
+        '200':
+          description: List of chapters
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Chapter'
+
+  /chapters/{chapterId}:
+    get:
+      summary: Get specific chapter content
+      parameters:
+        - name: chapterId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Chapter content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Chapter'
+        '404':
+          description: Chapter not found
+
+  /code-examples:
+    get:
+      summary: Get all code examples
+      responses:
+        '200':
+          description: List of code examples
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CodeExample'
+
+  /code-examples/{exampleId}:
+    get:
+      summary: Get specific code example
+      parameters:
+        - name: exampleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Code example details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CodeExample'
+        '404':
+          description: Code example not found
+
+components:
+  schemas:
+    Chapter:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the chapter
+        title:
+          type: string
+          description: Chapter title
+        description:
+          type: string
+          description: Brief description of the chapter
+        content:
+          type: string
+          description: Markdown content of the chapter
+        prerequisites:
+          type: array
+          items:
+            type: string
+          description: List of prerequisites for this chapter
+        learningObjectives:
+          type: array
+          items:
+            type: string
+          description: Learning objectives for this chapter
+        chapterStructure:
+          $ref: '#/components/schemas/ChapterStructure'
+        codeExamples:
+          type: array
+          items:
+            $ref: '#/components/schemas/CodeExample'
+        relatedTopics:
+          type: array
+          items:
+            type: string
+          description: Related topics in the book
+        difficultyLevel:
+          type: string
+          enum: [beginner, intermediate, advanced, multi-tiered]
+        estimatedTime:
+          type: string
+          description: Estimated time to complete the chapter
+
+    ChapterStructure:
+      type: object
+      properties:
+        motivation:
+          type: string
+          description: Section explaining why this topic matters
+        coreConcepts:
+          type: string
+          description: Theoretical foundations
+        practicalExamples:
+          type: string
+          description: Real-world applications
+        codeBlocks:
+          type: array
+          items:
+            type: string
+          description: List of code block content
+        troubleshooting:
+          type: string
+          description: Common issues and solutions
+        quiz:
+          type: string
+          description: Assessment questions
+
+    CodeExample:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the code example
+        title:
+          type: string
+          description: Example title
+        description:
+          type: string
+          description: Brief description of what the example demonstrates
+        language:
+          type: string
+          description: Programming language
+        code:
+          type: string
+          description: Executable code content
+        environment:
+          type: string
+          description: Target environment (ros2, gazebo, unity, etc.)
+        frameworkVersions:
+          $ref: '#/components/schemas/FrameworkVersions'
+        prerequisites:
+          type: array
+          items:
+            type: string
+          description: System setup, dependencies, and previous knowledge
+        expectedOutput:
+          type: string
+          description: Description of what the example should produce
+        troubleshooting:
+          type: array
+          items:
+            type: string
+          description: Common issues and solutions
+        testedStatus:
+          type: string
+          enum: [verified, needs_verification, broken]
+          description: Verification status
+        lastTested:
+          type: string
+          format: date
+          description: Date of last verification
+        relatedExamples:
+          type: array
+          items:
+            type: string
+          description: List of related examples
+
+    FrameworkVersions:
+      type: object
+      properties:
+        ros2:
+          type: string
+          description: ROS 2 version requirement (e.g., "Humble or newer")
+        gazebo:
+          type: string
+          description: Gazebo version requirement (e.g., "Fortress or newer")
+        unity:
+          type: string
+          description: Unity version requirement (e.g., "LTS")
+        isaac:
+          type: string
+          description: Isaac version requirement (e.g., "Current release")
