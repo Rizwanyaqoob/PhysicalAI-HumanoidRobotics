@@ -68,7 +68,7 @@ const config: Config = {
             label: 'Documentation',
           },
           {
-            href: 'https://https://github.com/Rizwanyaqoob/PhysicalAI-HumanoidRobotics',
+            href: 'https://github.com/Rizwanyaqoob/PhysicalAI-HumanoidRobotics',
             label: 'GitHub',
             position: 'right',
           },
