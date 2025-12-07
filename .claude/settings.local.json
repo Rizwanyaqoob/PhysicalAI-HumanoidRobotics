@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(dir /s /b)",
-      "Bash(findstr -i \"mcp\")"
+      "Bash(findstr -i \"mcp\")",
+      "Bash(git config user.email \"you@example.com\")"
     ],
     "deny": [],
     "ask": []
