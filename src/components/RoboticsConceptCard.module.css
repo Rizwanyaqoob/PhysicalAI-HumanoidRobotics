@@ -1,37 +1,272 @@
 .concepts {
-  padding: 4rem 0;
+  padding: 5rem 2rem;
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
+.concepts::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230ea5e9' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+
+.concepts .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Adjust grid for better card layout */
+.concepts .container .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+
+.concepts .container .row > div {
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  align-items: stretch;
+}
+
+.concepts .container .row > div:hover {
+  transform: translateY(-10px);
+  opacity: 1;
+}
+
+/* Grid layout for different screen sizes */
+@media screen and (min-width: 997px) {
+  /* Show 3 cards per row on large screens */
+  .concepts .container .row {
+    margin: 0 -1.5rem;
+  }
+
+  .concepts .container .row > div {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    padding: 0 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 996px) {
+  /* Show 2 cards per row on medium screens */
+  .concepts .container .row > div {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* Show 1 card per row on small screens */
+  .concepts .container .row > div {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Enhanced concept icon styling */
 .conceptIcon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  transition: transform 0.3s ease;
+  text-align: center;
 }
 
+.conceptCard:hover .conceptIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Enhanced card styling */
 .conceptCard {
-  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border: none;
-  background-color: #f7f7f7;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ffffff, #f0f9ff);
   color: inherit;
+  text-decoration: none;
+  padding: 2rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 8px 32px rgba(30, 64, 175, 0.1);
+  z-index: 1;
+}
+
+.conceptCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(30, 64, 175, 0.1));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 16px;
+}
+
+.conceptCard:hover::before {
+  opacity: 1;
 }
 
 .conceptCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(30, 64, 175, 0.2);
   color: inherit;
   text-decoration: none;
+  background: linear-gradient(145deg, #f0f9ff, #e0f2fe);
 }
 
+/* Card header styling */
+.conceptCard .card__header {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.conceptCard .card__header::after {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  border-radius: 1px;
+}
+
+/* Card body styling */
+.conceptCard .card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Card title styling */
+.conceptCard h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: #1e40af;
+  transition: color 0.3s ease;
+}
+
+.conceptCard:hover h3 {
+  color: #1d4ed8;
+}
+
+/* Card description styling */
+.conceptCard p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.conceptCard:hover p {
+  color: #334155;
+}
+
+/* Add a subtle gradient overlay on hover */
+.conceptCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  transition: left 0.8s ease;
+  z-index: -1;
+  border-radius: 16px;
+}
+
+.conceptCard:hover::after {
+  left: 100%;
+}
+
+/* Animation for initial load */
+.conceptCard {
+  animation: slideUp 0.6s ease-out 0.1s both;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.conceptCard:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.conceptCard:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.conceptCard:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.conceptCard:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.conceptCard:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Animations */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
 @media screen and (max-width: 996px) {
   .concepts {
-    padding: 2rem 0;
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .concepts {
+    padding: 3rem 1rem;
   }
 
   .conceptIcon {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .conceptCard {
-    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .conceptCard h3 {
+    font-size: 1.3rem;
+  }
+
+  .conceptCard p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .concepts {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .conceptIcon {
+    font-size: 2.5rem;
   }
 }

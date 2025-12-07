@@ -7,18 +7,21 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://rizwanyaqoob.github.io',  // Replace with your actual domain
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub Pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/PhysicalAI-HumanoidRobotics/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'SpecKItPLus', // Usually your GitHub org/user name.
-  projectName: 'Humanoid-Robotics-A-Practical-Introduction', // Usually your repo name.
+  organizationName: 'Rizwanyaqoob', // Usually your GitHub org/user name.
+  projectName: 'PhysicalAI-HumanoidRobotics', // Usually your repo name.
 
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'ignore', // Updated from deprecated config
+  markdown: {
+    mermaid: true,
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -50,7 +53,7 @@ const config: Config = {
   themeConfig:
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/logo.svg', // Using existing logo as social card
       navbar: {
         title: 'Humanoid Robotics',
         logo: {
@@ -65,7 +68,7 @@ const config: Config = {
             label: 'Documentation',
           },
           {
-            href: 'https://github.com/Rizwanyaqoob/Humanoid-Robotics-A-Practical-Introduction',
+            href: 'https://https://github.com/Rizwanyaqoob/PhysicalAI-HumanoidRobotics',
             label: 'GitHub',
             position: 'right',
           },
@@ -79,7 +82,7 @@ const config: Config = {
             items: [
               {
                 label: 'Introduction',
-                to: '/docs/intro/',
+                to: '/docs/docs/intro/',
               },
             ],
           },
