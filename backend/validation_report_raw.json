@@ -1,0 +1,232 @@
+{
+  "validation_timestamp": "2025-12-14T01:22:21.969508",
+  "collection_health": {
+    "collection_exists": true,
+    "vector_count": 35,
+    "vector_dimensions": 1024,
+    "distance_type": "Cosine",
+    "status": "healthy"
+  },
+  "retrieval_metrics": [
+    {
+      "query_id": "q1",
+      "query_text": "What is embodied intelligence?",
+      "query_type": "specific",
+      "results_count": 0,
+      "avg_retrieval_time_ms": 3938.2541179656982,
+      "top_result_score": 0,
+      "relevance_accuracy": 0
+    },
+    {
+      "query_id": "q2",
+      "query_text": "Explain humanoid robot control systems",
+      "query_type": "specific",
+      "results_count": 0,
+      "avg_retrieval_time_ms": 3989.4790649414062,
+      "top_result_score": 0,
+      "relevance_accuracy": 0
+    },
+    {
+      "query_id": "q3",
+      "query_text": "How does reinforcement learning apply to robotics?",
+      "query_type": "specific",
+      "results_count": 0,
+      "avg_retrieval_time_ms": 3940.5226707458496,
+      "top_result_score": 0,
+      "relevance_accuracy": 0
+    },
+    {
+      "query_id": "q4",
+      "query_text": "What are the foundations of physical AI?",
+      "query_type": "broad",
+      "results_count": 0,
+      "avg_retrieval_time_ms": 3976.682186126709,
+      "top_result_score": 0,
+      "relevance_accuracy": 0
+    },
+    {
+      "query_id": "q5",
+      "query_text": "Describe motion planning techniques",
+      "query_type": "specific",
+      "results_count": 0,
+      "avg_retrieval_time_ms": 3934.6060752868652,
+      "top_result_score": 0,
+      "relevance_accuracy": 0
+    },
+    {
+      "query_id": "q6",
+      "query_text": "What is computer vision in robotics?",
+      "query_type": "broad",
+      "results_count": 0,
+      "avg_retrieval_time_ms": 4083.7671756744385,
+      "top_result_score": 0,
+      "relevance_accuracy": 0
+    },
+    {
+      "query_id": "q7",
+      "query_text": "How do VLA systems work?",
+      "query_type": "specific",
+      "results_count": 0,
+      "avg_retrieval_time_ms": 3929.075002670288,
+      "top_result_score": 0,
+      "relevance_accuracy": 0
+    },
+    {
+      "query_id": "q8",
+      "query_text": "Explain ROS2 in humanoid robotics",
+      "query_type": "specific",
+      "results_count": 0,
+      "avg_retrieval_time_ms": 4011.613130569458,
+      "top_result_score": 0,
+      "relevance_accuracy": 0
+    },
+    {
+      "query_id": "q9",
+      "query_text": "What are the key concepts in digital twin technology?",
+      "query_type": "specific",
+      "results_count": 0,
+      "avg_retrieval_time_ms": 3959.1054916381836,
+      "top_result_score": 0,
+      "relevance_accuracy": 0
+    },
+    {
+      "query_id": "q10",
+      "query_text": "How to test and debug humanoid robots?",
+      "query_type": "specific",
+      "results_count": 0,
+      "avg_retrieval_time_ms": 3989.979028701782,
+      "top_result_score": 0,
+      "relevance_accuracy": 0
+    }
+  ],
+  "metadata_integrity": {
+    "total_checks": 0,
+    "complete_metadata_count": 0,
+    "integrity_percentage": 0,
+    "integrity_target_met": false,
+    "field_completeness": {
+      "url_present": 0,
+      "title_present": 0,
+      "content_preview_present": 0,
+      "original_content_length_present": 0
+    }
+  },
+  "performance_metrics": {
+    "total_queries_executed": 10,
+    "total_queries_attempted": 10,
+    "successful_query_percentage": 100.0,
+    "avg_retrieval_time_ms": 3975.308394432068,
+    "max_retrieval_time_ms": 4083.7671756744385,
+    "min_retrieval_time_ms": 3929.075002670288,
+    "latency_target_met": false
+  },
+  "quality_metrics": {
+    "total_chunks_validated": 0,
+    "total_queries_processed": 10,
+    "issues_found_count": 10,
+    "issues_by_type": {
+      "no_results_for_query": 10
+    },
+    "collection_vector_count": 35,
+    "expected_vector_count": 35,
+    "vector_count_match": true,
+    "avg_relevance_accuracy": 0.0,
+    "relevance_target_met": false
+  },
+  "issues_found": [
+    {
+      "type": "no_results_for_query",
+      "query_id": "q1",
+      "query_text": "What is embodied intelligence?",
+      "description": "Query 'What is embodied intelligence?' returned no results",
+      "severity": "medium"
+    },
+    {
+      "type": "no_results_for_query",
+      "query_id": "q2",
+      "query_text": "Explain humanoid robot control systems",
+      "description": "Query 'Explain humanoid robot control systems' returned no results",
+      "severity": "medium"
+    },
+    {
+      "type": "no_results_for_query",
+      "query_id": "q3",
+      "query_text": "How does reinforcement learning apply to robotics?",
+      "description": "Query 'How does reinforcement learning apply to robotics?' returned no results",
+      "severity": "medium"
+    },
+    {
+      "type": "no_results_for_query",
+      "query_id": "q4",
+      "query_text": "What are the foundations of physical AI?",
+      "description": "Query 'What are the foundations of physical AI?' returned no results",
+      "severity": "medium"
+    },
+    {
+      "type": "no_results_for_query",
+      "query_id": "q5",
+      "query_text": "Describe motion planning techniques",
+      "description": "Query 'Describe motion planning techniques' returned no results",
+      "severity": "medium"
+    },
+    {
+      "type": "no_results_for_query",
+      "query_id": "q6",
+      "query_text": "What is computer vision in robotics?",
+      "description": "Query 'What is computer vision in robotics?' returned no results",
+      "severity": "medium"
+    },
+    {
+      "type": "no_results_for_query",
+      "query_id": "q7",
+      "query_text": "How do VLA systems work?",
+      "description": "Query 'How do VLA systems work?' returned no results",
+      "severity": "medium"
+    },
+    {
+      "type": "no_results_for_query",
+      "query_id": "q8",
+      "query_text": "Explain ROS2 in humanoid robotics",
+      "description": "Query 'Explain ROS2 in humanoid robotics' returned no results",
+      "severity": "medium"
+    },
+    {
+      "type": "no_results_for_query",
+      "query_id": "q9",
+      "query_text": "What are the key concepts in digital twin technology?",
+      "description": "Query 'What are the key concepts in digital twin technology?' returned no results",
+      "severity": "medium"
+    },
+    {
+      "type": "no_results_for_query",
+      "query_id": "q10",
+      "query_text": "How to test and debug humanoid robots?",
+      "description": "Query 'How to test and debug humanoid robots?' returned no results",
+      "severity": "medium"
+    },
+    {
+      "type": "sampling_error",
+      "description": "Error during data quality sampling: Unexpected Response: 400 (Bad Request)\nRaw response content:\nb'{\"status\":{\"error\":\"Format error in JSON body: value 0 is not a valid point ID, valid values are either an unsigned integer or a UUID at line 1 column 213\"},\"time\":0.0}'",
+      "severity": "medium"
+    }
+  ],
+  "load_validation": {
+    "test_type": "high_load_validation",
+    "concurrent_requests": 10,
+    "query_batch_size": 5,
+    "total_time_seconds": 4.66472601890564,
+    "load_metrics": {
+      "total_queries_sent": 5,
+      "successful_queries": 5,
+      "failed_queries": 0,
+      "avg_response_time_ms": 4392.33922958374,
+      "min_response_time_ms": 4017.0793533325195,
+      "max_response_time_ms": 4662.360906600952,
+      "throughput_queries_per_second": 1.0718743136757722,
+      "concurrent_requests": 10,
+      "start_time": 1765657427.8121245
+    },
+    "issues_found": [],
+    "success_rate_percentage": 100.0
+  }
+}

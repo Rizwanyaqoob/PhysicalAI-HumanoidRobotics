@@ -1,0 +1,190 @@
+.response-display-container {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  background-color: #fff;
+  max-width: 100%;
+}
+
+.response-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.response-header h3 {
+  margin: 0;
+  color: #212529;
+}
+
+.copy-answer-button {
+  padding: 0.25rem 0.5rem;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.copy-answer-button:hover {
+  background-color: #dee2e6;
+}
+
+.response-answer {
+  margin-bottom: 1.5rem;
+}
+
+.answer-content {
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.answer-content p {
+  margin: 0.5rem 0;
+}
+
+.answer-content ul, .answer-content ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.answer-content code {
+  background-color: #f8f9fa;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.answer-content pre {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+}
+
+.no-answer {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.response-sources h4 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #495057;
+}
+
+.sources-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.source-item {
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.source-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.source-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex-grow: 1;
+}
+
+.source-title {
+  font-weight: 600;
+  color: #212529;
+  font-size: 0.9rem;
+}
+
+.source-page {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.source-document {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.source-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-source-button, .toggle-source-button {
+  padding: 0.25rem 0.5rem;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.copy-source-button:hover, .toggle-source-button:hover {
+  background-color: #dee2e6;
+}
+
+.source-content {
+  padding: 0.75rem;
+  background-color: #fff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.source-content.expanded {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.source-similarity {
+  font-size: 0.8rem;
+  color: #28a745;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.source-text {
+  line-height: 1.5;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.source-text p {
+  margin: 0.25rem 0;
+}
+
+.response-timing {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e9ecef;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.timing-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.total-time {
+  font-weight: 600;
+  color: #212529;
+}
