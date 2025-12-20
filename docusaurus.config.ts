@@ -23,6 +23,33 @@ const config: Config = {
     mermaid: true,
   },
 
+  // Environment variables for RAG integration
+  customFields: {
+    BACKEND_API_URL: process.env.BACKEND_API_URL || 'http://localhost:8009',
+  },
+
+  // Scripts to inject into the HTML
+  scripts: [
+    {
+      src: '/rag-injector.js',
+      defer: true,  // Use defer instead of async to ensure DOM is ready
+    },
+  ],
+
+  // Inject BACKEND_API_URL as a global variable for client-side scripts
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'text/javascript',
+      },
+      innerHTML: `
+        window.BACKEND_API_URL = '${process.env.BACKEND_API_URL || 'http://localhost:8009'}';
+      `,
+    },
+  ],
+
+
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".

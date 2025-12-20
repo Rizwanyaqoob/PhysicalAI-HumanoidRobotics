@@ -1,0 +1,62 @@
+[
+  {
+    "id": "q1",
+    "text": "What is embodied intelligence?",
+    "type": "specific",
+    "expected_topic": "embodied intelligence"
+  },
+  {
+    "id": "q2",
+    "text": "Explain humanoid robot control systems",
+    "type": "specific",
+    "expected_topic": "robot control"
+  },
+  {
+    "id": "q3",
+    "text": "How does reinforcement learning apply to robotics?",
+    "type": "specific",
+    "expected_topic": "reinforcement learning"
+  },
+  {
+    "id": "q4",
+    "text": "What are the foundations of physical AI?",
+    "type": "broad",
+    "expected_topic": "physical AI"
+  },
+  {
+    "id": "q5",
+    "text": "Describe motion planning techniques",
+    "type": "specific",
+    "expected_topic": "motion planning"
+  },
+  {
+    "id": "q6",
+    "text": "What is computer vision in robotics?",
+    "type": "broad",
+    "expected_topic": "perception"
+  },
+  {
+    "id": "q7",
+    "text": "How do VLA systems work?",
+    "type": "specific",
+    "expected_topic": "VLA systems"
+  },
+  {
+    "id": "q8",
+    "text": "Explain ROS2 in humanoid robotics",
+    "type": "specific",
+    "expected_topic": "ROS2"
+  },
+  {
+    "id": "q9",
+    "text": "What are the key concepts in digital twin technology?",
+    "type": "specific",
+    "expected_topic": "digital twin"
+  },
+  {
+    "id": "q10",
+    "text": "How to test and debug humanoid robots?",
+    "type": "specific",
+    "expected_topic": "testing and debugging"
+  }
+]

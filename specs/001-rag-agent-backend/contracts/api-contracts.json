@@ -1,0 +1,266 @@
+# API Contracts: RAG Agent Backend
+
+## Ask Endpoint
+
+### Request
+**Path**: `POST /api/ask`
+**Description**: Submit a query to the RAG agent to get a grounded answer based on book content.
+
+**Request Body**:
+```json
+{
+  "query": {
+    "type": "string",
+    "description": "The user's question or query",
+    "minLength": 1,
+    "maxLength": 10000,
+    "example": "What are the key principles of humanoid robotics?"
+  },
+  "provider": {
+    "type": "string",
+    "enum": ["openai", "gemini"],
+    "default": "openai",
+    "description": "AI provider to use for answer generation"
+  },
+  "max_chunks": {
+    "type": "integer",
+    "minimum": 1,
+    "maximum": 20,
+    "default": 5,
+    "description": "Maximum number of content chunks to retrieve"
+  },
+  "user_id": {
+    "type": "string",
+    "nullable": true,
+    "description": "Optional user identifier"
+  }
+}
+```
+
+**Headers**:
+- `Content-Type: application/json`
+
+### Response
+**Success Response (200)**:
+```json
+{
+  "answer": {
+    "type": "string",
+    "description": "The generated answer based on retrieved context"
+  },
+  "sources": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "The retrieved content chunk"
+        },
+        "source_document": {
+          "type": "string",
+          "description": "Reference to the original document"
+        },
+        "page_number": {
+          "type": "integer",
+          "nullable": true,
+          "description": "Page number in the original document"
+        },
+        "section_title": {
+          "type": "string",
+          "nullable": true,
+          "description": "Title of the section containing the chunk"
+        },
+        "similarity_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Cosine similarity score to the query"
+        },
+        "chunk_id": {
+          "type": "string",
+          "description": "Unique identifier for the chunk"
+        }
+      }
+    },
+    "description": "List of content chunks used to generate the answer"
+  },
+  "provider_used": {
+    "type": "string",
+    "enum": ["openai", "gemini"],
+    "description": "Which AI provider was used to generate the answer"
+  },
+  "debug_info": {
+    "type": "object",
+    "properties": {
+      "embedding_time": {
+        "type": "number",
+        "description": "Time taken for embedding generation in seconds"
+      },
+      "retrieval_time": {
+        "type": "number",
+        "description": "Time taken for retrieval in seconds"
+      },
+      "generation_time": {
+        "type": "number",
+        "description": "Time taken for answer generation in seconds"
+      },
+      "total_time": {
+        "type": "number",
+        "description": "Total processing time in seconds"
+      }
+    },
+    "description": "Debugging information with timing details"
+  }
+}
+```
+
+**Error Response (400)**:
+```json
+{
+  "error": {
+    "type": "string",
+    "description": "Error message describing the issue"
+  },
+  "details": {
+    "type": "object",
+    "description": "Additional error details"
+  }
+}
+```
+
+## Retrieve Endpoint
+
+### Request
+**Path**: `POST /api/retrieve`
+**Description**: Retrieve relevant content chunks from the vector database based on a query.
+
+**Request Body**:
+```json
+{
+  "query": {
+    "type": "string",
+    "description": "The query to search for relevant content",
+    "minLength": 1,
+    "maxLength": 10000,
+    "example": "What are the key principles of humanoid robotics?"
+  },
+  "max_chunks": {
+    "type": "integer",
+    "minimum": 1,
+    "maximum": 20,
+    "default": 5,
+    "description": "Maximum number of content chunks to retrieve"
+  }
+}
+```
+
+**Headers**:
+- `Content-Type: application/json`
+
+### Response
+**Success Response (200)**:
+```json
+{
+  "chunks": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "The retrieved content chunk"
+        },
+        "source_document": {
+          "type": "string",
+          "description": "Reference to the original document"
+        },
+        "page_number": {
+          "type": "integer",
+          "nullable": true,
+          "description": "Page number in the original document"
+        },
+        "section_title": {
+          "type": "string",
+          "nullable": true,
+          "description": "Title of the section containing the chunk"
+        },
+        "similarity_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Cosine similarity score to the query"
+        },
+        "chunk_id": {
+          "type": "string",
+          "description": "Unique identifier for the chunk"
+        }
+      }
+    },
+    "description": "List of retrieved content chunks"
+  },
+  "retrieval_time": {
+    "type": "number",
+    "description": "Time taken for retrieval in seconds"
+  }
+}
+```
+
+## Health Check Endpoint
+
+### Request
+**Path**: `GET /health`
+**Description**: Check the health status of the RAG agent service.
+
+### Response
+**Success Response (200)**:
+```json
+{
+  "status": {
+    "type": "string",
+    "enum": ["healthy"],
+    "description": "Health status of the service"
+  },
+  "timestamp": {
+    "type": "string",
+    "format": "date-time",
+    "description": "Timestamp of the health check"
+  },
+  "dependencies": {
+    "type": "object",
+    "properties": {
+      "qdrant": {
+        "type": "string",
+        "enum": ["connected", "disconnected"],
+        "description": "Status of Qdrant connection"
+      },
+      "openai": {
+        "type": "string",
+        "enum": ["connected", "disconnected"],
+        "description": "Status of OpenAI API connection"
+      },
+      "gemini": {
+        "type": "string",
+        "enum": ["connected", "disconnected"],
+        "description": "Status of Gemini API connection"
+      }
+    },
+    "description": "Status of external dependencies"
+  }
+}
+```
+
+**Error Response (503)**:
+```json
+{
+  "status": {
+    "type": "string",
+    "enum": ["unhealthy"],
+    "description": "Health status of the service"
+  },
+  "error": {
+    "type": "string",
+    "description": "Error message describing the health issue"
+  }
+}
+```

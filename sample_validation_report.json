@@ -1,0 +1,59 @@
+{
+  "validation_timestamp": "2025-12-12T15:53:53.383319",
+  "total_queries_run": 10,
+  "avg_retrieval_latency": 150.0,
+  "metadata_integrity_percentage": 99.5,
+  "relevance_accuracy": 95.0,
+  "collection_health_status": "healthy",
+  "missing_vectors_count": 0,
+  "performance_metrics": {
+    "total_queries_executed": 10,
+    "avg_retrieval_time_ms": 150.0,
+    "max_retrieval_time_ms": 180.0,
+    "min_retrieval_time_ms": 120.0,
+    "latency_target_met": true
+  },
+  "quality_metrics": {
+    "total_chunks_validated": 50,
+    "issues_found_count": 2,
+    "issues_by_type": {
+      "low_severity": 2
+    },
+    "collection_vector_count": 35,
+    "expected_vector_count": 35,
+    "vector_count_match": true,
+    "avg_relevance_accuracy": 95.0,
+    "relevance_target_met": true
+  },
+  "issues_found": [
+    {
+      "type": "low_severity_issue",
+      "description": "Minor issue found during validation",
+      "severity": "low"
+    },
+    {
+      "type": "low_severity_issue",
+      "description": "Another minor issue found",
+      "severity": "low"
+    }
+  ],
+  "issues_summary": {
+    "total_issues": 2,
+    "by_severity": {
+      "high": 0,
+      "medium": 0,
+      "low": 2,
+      "unknown": 0
+    },
+    "has_high_severity_issues": false,
+    "has_critical_issues": false
+  },
+  "summary": {
+    "status": "completed",
+    "collection_health_ok": true,
+    "latency_target_met": true,
+    "metadata_integrity_target_met": true,
+    "issues_found": true,
+    "total_issues": 2
+  }
+}
