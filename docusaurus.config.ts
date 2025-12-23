@@ -24,9 +24,10 @@ const config: Config = {
   },
 
   // Environment variables for RAG integration
-  customFields: {
-    BACKEND_API_URL: process.env.BACKEND_API_URL || 'http://localhost:8009',
-  },
+customFields: {
+  BACKEND_API_URL: 'https://rizwanya-chatbotdeploy.hf.space',
+},
+
 
   // Scripts to inject into the HTML
   scripts: [

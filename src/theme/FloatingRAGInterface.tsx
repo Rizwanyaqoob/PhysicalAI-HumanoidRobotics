@@ -34,7 +34,8 @@ const FloatingRAGInterface = () => {
 
     // First, try the actual backend API
     try {
-      const backendUrl = siteConfig.customFields?.BACKEND_API_URL || 'http://localhost:8009';
+      const backendUrl = siteConfig.customFields?.BACKEND_API_URL || 'https://rizwanya-chatbotdeploy.hf.space';
+      console.log('Backend URL:', backendUrl);
       const requestBody = {
         query: useSelectedText && selectedText ? `Based on the following text: "${selectedText}", ${query}` : query,
         provider: 'gemini',
