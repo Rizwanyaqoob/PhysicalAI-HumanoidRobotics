@@ -1,0 +1,107 @@
+/* ChatSources Component Styles */
+.chat-sources-container {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.chat-sources-header {
+  margin: 0 0 1rem 0;
+}
+
+.chat-sources-header h4 {
+  margin: 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+.sources-list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.source-item {
+  margin-bottom: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.source-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.source-info {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.source-title {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.source-page {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.source-document {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+}
+
+.source-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-source-button,
+.toggle-source-button {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.copy-source-button:hover,
+.toggle-source-button:hover {
+  background-color: #e0e0e0;
+}
+
+.source-content {
+  padding: 0.75rem;
+  max-height: 200px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.source-content.expanded {
+  max-height: none;
+}
+
+.source-similarity {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.source-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #444;
+}

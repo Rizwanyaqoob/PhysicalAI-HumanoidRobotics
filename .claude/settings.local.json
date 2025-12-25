@@ -56,7 +56,13 @@
       "Bash(npm install)",
       "Bash(dir venv)",
       "Bash(npm start)",
-      "Bash(pip --version)"
+      "Bash(pip --version)",
+      "Bash(.specify/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks)",
+      "Bash(dir D:SpecKItPLusHumanoid Robotics A Practical IntroductionPhysicalAI_HumanoidRoboticsfrontendsrc /s)",
+      "Bash(dir \"D:\\\\SpecKItPLus\\\\Humanoid Robotics A Practical Introduction\\\\PhysicalAI_HumanoidRobotics\\\\frontend\\\\src\" /s)",
+      "Bash(npx docusaurus start --port 3005)",
+      "Bash(taskkill /PID 12592 /F)",
+      "Bash(powershell -Command \"Stop-Process -Name ''node'' -Force -ErrorAction SilentlyContinue\")"
     ],
     "deny": [],
     "ask": []
