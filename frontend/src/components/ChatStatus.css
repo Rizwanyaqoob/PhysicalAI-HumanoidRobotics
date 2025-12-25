@@ -1,0 +1,76 @@
+/* ChatStatus Component Styles */
+.chat-status-container {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.chat-status-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chat-status-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chat-status-icon {
+  font-size: 1.2rem;
+}
+
+.chat-status-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.chat-status-message {
+  margin: 0;
+  color: #333;
+}
+
+.estimated-time {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.retry-button {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  background-color: #3578e5;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.retry-button:hover {
+  background-color: #2a64c5;
+}
+
+/* Loading status styles */
+.chat-status-loading {
+  background-color: #e3f2fd;
+  border: 1px solid #bbdefb;
+  color: #1565c0;
+}
+
+/* Error status styles */
+.chat-status-error {
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+  color: #c62828;
+}
+
+/* Success status styles */
+.chat-status-success {
+  background-color: #e8f5e8;
+  border: 1px solid #c8e6c8;
+  color: #2e7d32;
+}

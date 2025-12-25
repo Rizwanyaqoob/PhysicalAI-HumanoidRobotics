@@ -1,0 +1,30 @@
+/* RAGChat Component Styles */
+.rag-chat-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.rag-chat-header {
+  margin: 0 0 1rem 0;
+}
+
+.rag-chat-header h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.3rem;
+}
+
+.rag-chat-sidebar {
+  max-width: 400px;
+  width: 100%;
+}
+
+.rag-chat-floating {
+  position: relative;
+}
+
+.rag-chat-inline {
+  width: 100%;
+}
